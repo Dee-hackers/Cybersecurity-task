@@ -1,0 +1,44 @@
+Firewall Configuration Task Summary On Windows (Using GUI – Windows Defender Firewall)
+
+Steps Performed:
+
+1. Open Firewall Tool
+
+Control Panel → System and Security → Windows Defender Firewall → Advanced Settings
+
+
+2. List Current Rules
+
+Viewed under Inbound Rules in Advanced Settings.
+
+
+3. Add Block Rule for Port 23 (Telnet)
+
+Created New Inbound Rule
+
+Type: Port → TCP → Specific port: 23
+
+Action: Block the connection
+
+Profile: All (Domain, Private, Public)
+
+Named: Block Telnet
+
+
+
+4. Test Rule
+
+Using Telnet client:
+
+telnet localhost 23
+
+Expected failure/timeout.
+
+
+
+5. (Skip SSH Rule – Not applicable to Windows)
+
+
+6. Remove Block Rule
+
+Go to Inbound Rules → Right-click → Delete
